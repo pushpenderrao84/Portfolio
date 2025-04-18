@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pushpender Rao | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #030e20;
+      --light-gray: #f0f0f0;
+      --accent-blue: #3db9f5;
+      --dark-text: #1f1f1f;
+      --light-text: #e0e0e0;
+      --transition: 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+    padding-top: 8rem;
+      background-color: var(--light-gray);
+      color: var(--dark-text);
+      transition: var(--transition);
+    }
+
+    body.dark-mode {
+      background-color: var(--navy);
+      color: var(--light-text);
+    }
+
+    header {
+      padding: 2rem;
+      text-align: center;
+      background: #0006108a;
+      color: white;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(10px);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      flex-direction: column;
+      border-bottom: 2px solid #0b00001a;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.852);
+    }
+
+    body.dark-mode header {
+      background: #000308ce;
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 2px solid #ffffff1a;
+      box-shadow: 0 4px 20px #1f2b3a;
+    }
+
+    .toggle-mode {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--accent-blue);
+      backdrop-filter: blur(5px);
+      border: 1px #ffffff4d;
+      box-shadow: 0 1px 20px #0000007b;
+      padding: 0.25rem 0.5rem;
+      border-radius: 25px;
+      cursor: pointer;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1001;
+      position: fixed;
+    }
+
+    body.dark-mode .toggle-mode {
+      background: var(--accent-blue);
+      box-shadow: 0 1px 20px #4d88d5;
+    }
+
+    .toggle-mode img {
+      width: 20px;
+      height: 20px;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      color: var(--accent-blue);
+      margin-bottom: 1rem;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 3rem 2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin: 1rem 0;
+    }
+
+    .hero .contact-btns a {
+      margin: 0 0.5rem;
+      text-decoration: none;
+      color: white;
+      background: var(--accent-blue);
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media(min-width: 768px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      transition: var(--transition);
+    }
+
+    body.dark-mode .card {
+      background: #1f2b3a;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 1rem;
+    }
+
+    ul li::before {
+      content: '•';
+      color: var(--accent-blue);
+      margin-right: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <button class="toggle-mode" onclick="toggleDarkMode()">
+    <img id="mode-icon" src="https://img.icons8.com/ios-glyphs/30/moon-symbol.png" alt="Toggle Mode">
+  </button>
+  <header>
+    <h1>Pushpender Rao</h1>
+    <p>“Aspiring Software Engineer | Tech Enthusiast | Creative Designer”</p>
+  </header>
+
+  <section class="hero">
+    <p>I'm a Computer Science undergraduate passionate about technology, design, and collaborative leadership. Let's connect!</p>
+    <div class="contact-btns">
+      <a href="mailto:pushpenderrao31@gmail.com">Email</a>
+      <a href="https://linkedin.com/in/pushpender84" target="_blank">LinkedIn</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>About Me</h2>
+    <div class="card">
+    <p>Motivated CSE student passionate about tech, design, and student leadership. Known for teamwork, time management, and creative problem-solving. I enjoy contributing to team initiatives such as organizing events, managing data, and designing visuals.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="card">
+    <p><strong>Guru Jambheshwar University of Science & Technology, Hisar</strong><br/>B.Tech in Computer Science & Engineering (Expected 2027)</p>
+    <p><strong>Relevant Coursework:</strong></p>
+    <ul>
+      <li>Data Structures & Algorithms</li>
+      <li>Database Management Systems</li>
+      <li>Java Programming</li>
+    </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Technical</h3>
+        <ul>
+          <li>HTML, CSS</li>
+          <li>MS Excel</li>
+          <li>MySQL</li>
+          <li>Canva, Photoshop</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Soft Skills</h3>
+        <ul>
+          <li>Problem-solving</li>
+          <li>Teamwork</li>
+          <li>Communication</li>
+          <li>Time Management</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Portfolio Website</h3>
+        <p>A responsive website built using HTML and CSS to showcase my skills, interests, and journey.</p>
+      </div>
+      <div class="card">
+        <h3>Graphic Designs</h3>
+        <p>Designed posters, infographics, and social media creatives using Canva and Photoshop.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Work Experience</h2>
+    <div class="card">
+      <h3>Core Team Member (2023–2024)</h3>
+      <p>Aptitude Club, Training & Placement Cell, GJUST</p>
+      <ul>
+        <li>Team collaboration and leadership</li>
+        <li>Weekly aptitude test planning</li>
+        <li>Group discussions and peer support</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Courses</h2>
+    <div class="card">
+    <ul>
+      <li>HTML, CSS – Completed from Knowledge Gate platform</li>
+    </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Additional Info</h2>
+    <div class="card">
+    <ul>
+      <li><strong>Languages:</strong> Hindi, English</li>
+      <li><strong>Interests:</strong> Cricket, Reading</li>
+    </ul>
+    </div>
+  </section>
+
+  <script>
+    function toggleDarkMode() {
+      const body = document.body;
+      const icon = document.getElementById("mode-icon");
+  
+      body.classList.toggle("dark-mode");
+  
+      if (body.classList.contains("dark-mode")) {
+        icon.src = "https://img.icons8.com/ios-glyphs/30/sun--v1.png";
+        icon.alt = "Light Mode";
+      } else {
+        icon.src = "https://img.icons8.com/ios-glyphs/30/moon-symbol.png";
+        icon.alt = "Dark Mode";
+      }
+    }
+  </script>
+</body>
+</html>
