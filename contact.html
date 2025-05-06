@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Pushpender Rao</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="https://yt3.googleusercontent.com/vVV3JKa-rja0qnQ0CNjbU8QuhFtstNfzAVoFH9ki4Q9Hl4TwyEGhgFoN8KbumUv8MqdMNma5sw=s160-c-k-c0x00ffffff-no-rj">
+  <style>
+    :root {
+      --navy: #030e20;
+      --light-gray: #f0f0f0;
+      --accent-blue: #3db9f5;
+      --dark-text: #1f1f1f;
+      --light-text: #e0e0e0;
+      --transition: 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      padding-top: 10rem;
+      background-color: var(--light-gray);
+      color: var(--dark-text);
+      transition: var(--transition);
+    }
+
+    body.dark-mode {
+      background-color: var(--navy);
+      color: var(--light-text);
+    }
+
+    header {
+      padding: 1rem;
+      text-align: center;
+      background: #0006108a;
+      color: white;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(10px);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      flex-direction: column;
+      border-bottom: 2px solid #0b00001a;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.852);
+    }
+
+    .header-content {
+        margin-top: 0.5rem;
+        display: flex;
+        justify-content: center;
+        gap: 3rem; /* Increased spacing between sections */
+        flex-wrap: wrap;
+        margin-bottom: 0.5rem;
+        color: #e0e0e0;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-size: 0.95rem;
+        min-width: 100px; /* Ensures even narrow sections stay clean */
+    }
+
+    .header-content a {
+        text-decoration: none;
+        color: #e0e0e0;
+        font-weight: 500;
+        transition: color 0.3s, transform 0.3s;
+        padding: 0.25rem 0.5rem;
+        border-radius: 5px;
+    }
+
+    .header-content a:hover {
+        color: var(--accent-blue);
+        background-color: rgba(255, 255, 255, 0.05);
+        transform: translateY(-2px);
+    }
+
+    body.dark-mode .header-content a {
+        color: #cccccc;
+    }
+
+    body.dark-mode .header-content a:hover {
+        color: var(--accent-blue);
+    }
+
+
+    body.dark-mode header {
+      background: #000308ce;
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 2px solid #ffffff1a;
+      box-shadow: 0 4px 20px #1f2b3a;
+    }
+
+    .toggle-mode {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--accent-blue);
+      backdrop-filter: blur(5px);
+      border: 1px #ffffff4d;
+      box-shadow: 0 1px 20px #0000007b;
+      padding: 0.25rem 0.5rem;
+      border-radius: 25px;
+      cursor: pointer;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1001;
+      position: fixed;
+    }
+
+    body.dark-mode .toggle-mode {
+      background: var(--accent-blue);
+      box-shadow: 0 1px 20px #4d88d5;
+    }
+
+    .toggle-mode img {
+      width: 20px;
+      height: 20px;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      color: var(--accent-blue);
+      margin-bottom: 1rem;
+    }
+
+    .card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      transition: var(--transition);
+    }
+
+    body.dark-mode .card {
+      background: #1f2b3a;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    input, textarea {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+      color: var(--dark-text);
+      font-size: 1rem;
+    }
+
+    body.dark-mode input,
+    body.dark-mode textarea {
+      background-color: #2b3b4a;
+      border: 1px solid #555;
+      color: var(--light-text);
+    }
+
+    button {
+      padding: 0.8rem;
+      background-color: var(--accent-blue);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #0070f3;
+    }
+
+    footer {
+  padding: 2rem 1rem 1rem;
+  text-align: center;
+  background: #0006108a;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 2px solid #0b00001a;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.852);
+  color: white;
+  margin-top: 3rem;
+}
+
+  .footer-content {
+    display: flex;
+    justify-content: center;
+    gap: 20rem; /* Increased spacing between sections */
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+
+  .footer-section {
+    text-align: left; /* Align text to the left */
+    min-width: 100px; /* Ensures even narrow sections stay clean */
+  }
+
+  .footer-section h3 {
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+    color: var(--accent-blue);
+  }
+
+  .footer-section a {
+    display: block;
+    color: #e0e0e0;
+    text-decoration: none;
+    margin: 0.5rem 0; /* Increased space between links */
+    transition: color 0.3s;
+    font-size: 0.95rem;
+  }
+
+  .footer-section a:hover {
+    color: var(--accent-blue);
+  }
+
+  .footer-note {
+    font-size: 0.85rem;
+    color: #c0c0c0;
+  }
+
+  /* Dark Mode Footer */
+  body.dark-mode footer {
+   background: #000308ce;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 2px solid #ffffff1a;
+    box-shadow: 0 -4px 20px #1f2b3a;
+  }
+
+  body.dark-mode .footer-section a {
+    color: #cccccc;
+  }
+
+  body.dark-mode .footer-section a:hover {
+    color: var(--accent-blue);
+  }
+
+  /* Modal Styles */
+  #modal {
+      display: none; 
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .modal-content {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+      width: 60%;
+      max-width: 400px;
+    }
+    .modal-content h2 {
+      margin-bottom: 1rem;
+    }
+    .modal-content button {
+      padding: 0.8rem 2rem;
+      background-color: #3db9f5;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .modal-content button:hover {
+      background-color: #0070f3;
+    }
+  </style>
+</head>
+<body>
+
+<button class="toggle-mode" onclick="toggleDarkMode()">
+  <img id="mode-icon" src="https://img.icons8.com/ios-glyphs/30/moon-symbol.png" alt="Toggle Mode">
+</button>
+
+<header>
+  <h1>Pushpender Rao</h1>
+  <p>“Aspiring Software Engineer | Tech Enthusiast | Creative Designer”</p>
+  <div class="header-content">
+    <a href="index.html">Home</a>
+    <a href="contact.html">Contact</a>
+    </div>
+</header>
+
+<section>
+  <h2>Contact Me</h2>
+  <div class="card">
+    <p>If you'd like to collaborate, chat about tech, or just say hello — feel free to reach out using the form below or connect with me directly through email or social media.</p>
+    <form action="https://formsubmit.co/pushpenderrao31@gmail.com" method="POST">
+            <!-- Visible Input Fields -->
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+          
+            <!-- Hidden Fields -->
+            <input type="hidden" name="_next" value="thanks.html"> <!-- Redirect after submit -->
+          
+            <!-- Submit Button -->
+            <button type="submit">Send</button>
+    </form>
+  </div>
+</section>
+<div id="modal">
+    <div class="modal-content">
+        <p>Your message has been successfully sent!</p>
+        <p id="countdown">Redirecting to Home Page in 5... 4... 3... 2... 1...</p>
+        <button onclick="resetForm()">Wanna send another message?</button>
+    </div>
+  </div>
+<footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Main</h3>
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-section">
+        <h3>Social</h3>
+        <a href="mailto:pushpenderrao31@gmail.com">Email</a>
+        <a href="https://linkedin.com/in/pushpender84" target="_blank">LinkedIn</a>
+        <a href="https://github.com/pushpenderrao84" target="_blank">GitHub</a>
+        <a href="https://x.com/pushpenderrao84/" target="_blank">Twitter (X)</a>
+        <a href="https://www.youtube.com/@pushpenderrao84" target="_blank">YouTube</a>
+        <a href="https://www.instagram.com/prao.84/" target="_blank">Instagram</a>
+      </div>
+    </div>
+    <p class="footer-note">Made with ❤️ by Pushpender Rao</p>
+  </footer>  
+  <script>
+    // Apply saved theme on load
+    document.addEventListener('DOMContentLoaded', function() {
+      const savedTheme = localStorage.getItem('theme');
+      const body = document.body;
+      const icon = document.getElementById("mode-icon");
+  
+      if (savedTheme === 'dark') {
+        body.classList.add('dark-mode');
+        icon.src = "https://img.icons8.com/ios-glyphs/30/sun--v1.png";
+        icon.alt = "Light Mode";
+      } else {
+        body.classList.remove('dark-mode');
+        icon.src = "https://img.icons8.com/ios-glyphs/30/moon-symbol.png";
+        icon.alt = "Dark Mode";
+      }
+    });
+  
+    // Toggle theme and save preference
+    function toggleDarkMode() {
+      const body = document.body;
+      const icon = document.getElementById("mode-icon");
+  
+      body.classList.toggle('dark-mode');
+  
+      if (body.classList.contains('dark-mode')) {
+        icon.src = "https://img.icons8.com/ios-glyphs/30/sun--v1.png";
+        icon.alt = "Light Mode";
+        localStorage.setItem('theme', 'dark');
+      } else {
+        icon.src = "https://img.icons8.com/ios-glyphs/30/moon-symbol.png";
+        icon.alt = "Dark Mode";
+        localStorage.setItem('theme', 'light');
+      }
+    }
+
+    // Show success message and countdown
+    successMessage.style.display = 'block';
+    let countdown = 5;
+    const countdownInterval = setInterval(function() {
+      countdown--;
+      countdownElement.textContent = `Redirecting to Home Page in ${countdown}...`;
+      
+      if (countdown === 0) {
+        clearInterval(countdownInterval);
+        window.location.href = 'index.html'; // Redirect after countdown
+      }
+    }, 1000);
+  });
+
+  // Reset form and countdown
+  function resetForm() {
+    successMessage.style.display = 'none';
+    form.reset();
+  }
+    </script>
+</body>
+</html>
