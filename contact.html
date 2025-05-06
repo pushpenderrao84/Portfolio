@@ -315,9 +315,9 @@
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <textarea name="message" placeholder="Your Message" required></textarea>
-          
+
             <!-- Hidden Fields -->
-            <input type="hidden" name="_next" value="contact.html"> <!-- Redirect after submit -->
+            <input type="hidden" name="_next" value="contact.html?success=true"> <!-- Redirect after submit -->
             <input type="hidden" name="_captcha" value="false">   <!-- Disable captcha -->
           
             <!-- Submit Button -->
@@ -387,25 +387,28 @@
       }
     }
 
-    // Show success message and countdown
-    successMessage.style.display = 'block';
-    let countdown = 5;
-    const countdownInterval = setInterval(function() {
-      countdown--;
-      countdownElement.textContent = `Redirecting to Home Page in ${countdown}...`;
-      
-      if (countdown === 0) {
-        clearInterval(countdownInterval);
-        window.location.href = 'index.html'; // Redirect after countdown
-      }
-    }, 1000);
-  });
+    window.onload = () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('success') === 'true') {
+    const modal = document.getElementById('modal');
+    const countdownElement = document.getElementById('countdown');
+    modal.style.display = 'flex';
 
-  // Reset form and countdown
-  function resetForm() {
-    successMessage.style.display = 'none';
-    form.reset();
+    let seconds = 5;
+    const interval = setInterval(() => {
+      countdownElement.textContent = `Redirecting to Home Page in ${seconds}...`;
+      if (seconds === 0) {
+        clearInterval(interval);
+        window.location.href = 'index.html';
+      }
+      seconds--;
+    }, 1000);
   }
+};
+
+function resetForm() {
+  window.location.href = 'contact.html'; // Reload clean page
+}
     </script>
 </body>
 </html>
